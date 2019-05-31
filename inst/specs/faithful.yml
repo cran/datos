@@ -1,0 +1,17 @@
+df:
+  source: datasets::faithful
+  name: fiel
+variables:
+  eruptions:
+    trans: erupciones
+    desc: Tiempo de erupciones, en minutos
+  waiting:
+    trans: espera
+    desc: Minutos entre erupciones
+help:
+  name: fiel
+  alias: fiel
+  title: Datos del géiser Viejo Fiel (Old Faithful)
+  description: Datos de tiempo de duración y espera entre erupciones del géiser Viejo Fiel (Old Faithful), ubicado en el Parque Nacional de Yellowstone, en Wyoming, Estados Unidos.
+  usage: fiel
+  format: Un data frame con 272 observaciones y 2 columnas
