@@ -1,6 +1,6 @@
 Package: datos
 Title: Traduce al Español Varios Conjuntos de Datos de Práctica
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: 
     c(person(given = "Edgar",
              family = "Ruiz",
@@ -28,13 +28,14 @@ Authors@R:
              email = "daniela.vazquez@gmail.com")
       )
 Description: Provee una versión traducida de los siguientes conjuntos de datos: 
-  'airlines', 'airports', 'babynames', 'Batting', 'diamonds', 'faithful', 'flights', 'gapminder', 
-  'gss_cat', 'iris', 'mpg', 'mtcars', 'atmos', 'planes', 'presidential', 'table1', 'table2', 'table3', 
-  'table4a', 'table4b', 'table5', 'vehicles','weather', 'who'. English: It provides a
-  Spanish translated version of the datasets listed above.
+  'airlines', 'airports', 'AwardsManagers', 'babynames', 'Batting', 'diamonds', 'faithful', 'fueleconomy', 
+  'Fielding', 'flights', 'gapminder', 'gss_cat', 'iris', 'Managers', 'mpg', 'mtcars', 'atmos', 'People, 
+  'Pitching', 'planes', 'presidential', 'table1', 'table2', 'table3', 'table4a', 'table4b', 'table5', 
+  'vehicles', 'weather', 'who'. 
+  English: It provides a Spanish translated version of the datasets listed above.
 License: CC0
 Depends: R (>= 3.5.0)
-Imports: yaml, tibble
+Imports: yaml, dplyr, rlang
 Suggests: babynames, fueleconomy, nycflights13, nasaweather, Lahman,
         ggplot2, gapminder, forcats, tidyr, testthat (>= 2.1.0), covr
 ByteCompile: true
@@ -45,7 +46,7 @@ URL: https://github.com/cienciadedatos/datos
 BugReports: https://github.com/cienciadedatos/datos/issues
 Language: es
 NeedsCompilation: no
-Packaged: 2019-05-29 19:16:00 UTC; edgar
+Packaged: 2019-09-24 20:17:13 UTC; Edgar
 Author: Edgar Ruiz [aut, cre],
   Riva Quiroga [aut],
   Mauricio Vargas [aut],
@@ -54,4 +55,4 @@ Author: Edgar Ruiz [aut, cre],
   Daniela Vasquez [ctb]
 Maintainer: Edgar Ruiz <edgararuiz@gmail.com>
 Repository: CRAN
-Date/Publication: 2019-05-31 16:40:04 UTC
+Date/Publication: 2019-09-25 09:10:03 UTC

@@ -1,32 +1,27 @@
 translate <- function(spec_file) {
   pkg_path <- system.file("specs", package = "datos")
   spec <- yaml::read_yaml(file.path(pkg_path, spec_file))
-  df <- parse(text = spec$df$source)
-  df <- eval(df)
-  if ("function" %in% class(df)) return()
-  if (tibble::is_tibble(df)) {
-    was_tibble <- TRUE
-  } else {
-    was_tibble <- FALSE
-    df <- tibble::as_tibble(df)
-  }
+  df <- suppressWarnings(eval(parse(text = spec$df$source)))
+  class_df <- class(df)
+  type_df <- NULL
+  if ("function" %in% class_df) return()
+  if ("data.frame" %in% class_df) type_df <- "data.frame"
+  if ("tbl_df" %in% class_df) type_df <- "tibble"
+  if ("grouped_df" %in% class_df) type_df <- "grouped_df"
+  if (is.null(type_df)) return()
+  if (type_df == "grouped_df") grps <- suppressWarnings(dplyr::group_vars(df))
+  if (type_df == "data.frame") row_names <- rownames(df)
+  if (type_df != "tibble") df <- dplyr::as_tibble(df)
   vars <- spec$variables
   var_names <- names(vars)
-  vars_TRUE <- var_names == "TRUE"
-  if (sum(vars_TRUE) > 0) {
-    if (vars[vars_TRUE][[1]]$trans == "TRUE") {
-      vars[vars_TRUE][[1]]$trans <- "y"
-    }
-    var_names[vars_TRUE] <- "y"
-  }
-  vars_FALSE <- var_names == "FALSE"
-  if (sum(vars_FALSE) > 0) {
-    if (vars[vars_FALSE][[1]]$trans == "TRUE") {
-      vars[vars_FALSE][[1]]$trans <- "n"
-    }
-    var_names[vars_FALSE] <- "n"
-  }
+  var_names[var_names == "FALSE"] <- "n"
+  var_names[var_names == "TRUE"] <- "y"
+  vars <- vars[var_names != "ROWNAMES"]
+  var_names <- var_names[var_names != "ROWNAMES"]
   new_names <- as.character(lapply(vars, function(x) x$trans))
+  new_names[new_names == "FALSE"] <- "n"
+  new_names[new_names == "TRUE"] <- "y"
+  new_names <- new_names[new_names != "ROWNAMES"]
   dfl <- lapply(
     seq_along(vars),
     function(x) {
@@ -41,20 +36,28 @@ translate <- function(spec_file) {
           }
           levels(cl) <- lv
         } else {
-          for (i in seq_along(from)) {
-            cl[cl == from[i]] <- to[i]
-          }
+          for (i in seq_along(from)) cl[cl == from[i]] <- to[i]
         }
       }
       cl
     }
   )
   dfl <- setNames(dfl, new_names)
-  if (was_tibble) {
-    tibble::as_tibble(dfl)
-  } else {
-    as.data.frame(dfl)
+  if (type_df == "tibble") dfl <- dplyr::as_tibble(dfl)
+  if (type_df == "grouped_df") {
+    grps_t <- as.character(lapply(grps, function(x) new_names[var_names == x]))
+    dfl <- dplyr::as_tibble(dfl)
+    dfl <- dplyr::group_by(dfl, !!! rlang::parse_exprs(grps_t))
   }
+  if (type_df == "data.frame") {
+    if(!is.null(row_names)) {
+      dfl <- as.data.frame(dfl)
+      rownames(dfl) <- row_names
+    } else {
+      dfl <- as.data.frame(dfl)
+    }
+  }
+  dfl
 }
 translate('presidential.yml')
 
