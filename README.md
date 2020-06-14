@@ -19,57 +19,24 @@ español.
 
 ## Instalación
 
-La versión en CRAN está disponible por medio de:
-
-``` r
-# install.packages("datos")
-```
-
-La versión en GitHub puede ser instalada utilizando `remotes`:
+Actualmente el paquete se encuentra solo disponible en GitHub. Puede
+instalarse utilizando `remotes`:
 
 ``` r
 # install.packages("remotes")
 # remotes::install_github("cienciadedatos/datos")
 ```
 
-## Requisitos
-
-Este paquete traduce los datos **en el momento**. Esto implica que la
-versión en español de los datos no está contenida como un objeto dentro
-del paquete, sino que se genera al momento de utilizarlos. Por lo tanto,
-para poder usar `datos`, **el paquete que contiene los datos originales
-en inglés debe estar previamente instalado**.
-
-Los paquetes necesarios son:
-
-| Paquetes     |
-| :----------- |
-| nycflights13 |
-| nasaweather  |
-| Lahman       |
-| babynames    |
-| fueleconomy  |
-| ggplot2      |
-| datasets     |
-| gapminder    |
-| forcats      |
-| tidyr        |
-
-El paquete `datasets` es parte de R base y `ggplot2`, `tibble`, `tidyr`,
-`readr` y `forcats` vienen incluidos en el paquete `tidyverse`. Todos
-los demás deben instalarse individualmente.
-
 ## Traducciones
 
-Las traducciones disponibles dentro de `datos` son las
-siguientes:
+Las traducciones disponibles dentro de `datos` son las siguientes:
 
 | Nombre              | Titulo                                                                                   | Paquete      | Dataset        |
 | :------------------ | :--------------------------------------------------------------------------------------- | :----------- | :------------- |
 | nombres             | Nombres de bebés                                                                         | babynames    | babynames      |
 | fiel                | Datos del géiser Viejo Fiel (Old Faithful)                                               | datasets     | faithful       |
 | flores              | Datos sobre la flor Iris de Edgar Anderson                                               | datasets     | iris           |
-| mtautos             | Pruebas de ruta de automóviles de Motor Trend                                            | datasets     | mtcars         |
+| mtautos             | Pruebas de ruta de autómóviles de Motor Trend                                            | datasets     | mtcars         |
 | encuesta            | Muestra de variables categóricas de una encuesta social                                  | forcats      | gss\_cat       |
 | comunes             | Modelos comunes de vehículos                                                             | fueleconomy  | common         |
 | vehiculos           | Datos de economía de combustible                                                         | fueleconomy  | vehicles       |
@@ -92,10 +59,10 @@ siguientes:
 | clima               | Datos de clima                                                                           | nycflights13 | weather        |
 | tabla1              | Registros de tuberculosis de la Organización Mundial de la Salud (1era variante)         | tidyr        | table1         |
 | tabla2              | Registros de tuberculosis de la Organización Mundial de la Salud (2da variante)          | tidyr        | table2         |
-| tabla3              | Registros de tuberculosis de la Organización Mundial de la Salud (3era variante)         | tidyr        | table3         |
-| tabla4a             | Registros de tuberculosis de la Organización Mundial de la Salud (3era variante)         | tidyr        | table4a        |
-| tabla4b             | Registros de tuberculosis de la Organización Mundial de la Salud (3era variante)         | tidyr        | table4b        |
-| tabla5              | Registros de tuberculosis de la Organización Mundial de la Salud (3era variante)         | tidyr        | table5         |
+| tabla3              | Registros de tuberculosis de la Organización Mundial de la Salud (3ra variante)          | tidyr        | table3         |
+| tabla4a             | Registros de tuberculosis de la Organización Mundial de la Salud (variante 4a)           | tidyr        | table4a        |
+| tabla4b             | Registros de tuberculosis de la Organización Mundial de la Salud (variante 4b)           | tidyr        | table4b        |
+| tabla5              | Registros de tuberculosis de la Organización Mundial de la Salud (5ta variante)          | tidyr        | table5         |
 | oms                 | Datos de tuberculosis de la Organización Mundial de la Salud                             | tidyr        | who            |
 
 Los datos para practicar la manipulación de cadenas (*strings*) son
@@ -122,18 +89,18 @@ llamamos por primera vez en español:
 glimpse(diamantes)
 ```
 
-    ## Observations: 53,940
-    ## Variables: 10
-    ## $ precio      <int> 326, 326, 327, 334, 335, 336, 336, 337, 337, 338, 33…
-    ## $ quilate     <dbl> 0.23, 0.21, 0.23, 0.29, 0.31, 0.24, 0.24, 0.26, 0.22…
-    ## $ corte       <ord> Ideal, Premium, Bueno, Premium, Bueno, Muy bueno, Mu…
-    ## $ color       <ord> E, E, E, I, J, J, I, H, E, H, J, J, F, J, E, E, I, J…
-    ## $ claridad    <ord> SI2, SI1, VS1, VS2, SI2, VVS2, VVS1, SI1, VS2, VS1, …
-    ## $ profundidad <dbl> 61.5, 59.8, 56.9, 62.4, 63.3, 62.8, 62.3, 61.9, 65.1…
-    ## $ tabla       <dbl> 55, 61, 65, 58, 58, 57, 57, 55, 61, 61, 55, 56, 61, …
-    ## $ x           <dbl> 3.95, 3.89, 4.05, 4.20, 4.34, 3.94, 3.95, 4.07, 3.87…
-    ## $ y           <dbl> 3.98, 3.84, 4.07, 4.23, 4.35, 3.96, 3.98, 4.11, 3.78…
-    ## $ z           <dbl> 2.43, 2.31, 2.31, 2.63, 2.75, 2.48, 2.47, 2.53, 2.49…
+    ## Rows: 53,940
+    ## Columns: 10
+    ## $ precio      <int> 326, 326, 327, 334, 335, 336, 336, 337, 337, 338, 339, 340, 342, 344, 345, 345, 348…
+    ## $ quilate     <dbl> 0.23, 0.21, 0.23, 0.29, 0.31, 0.24, 0.24, 0.26, 0.22, 0.23, 0.30, 0.23, 0.22, 0.31,…
+    ## $ corte       <ord> Ideal, Premium, Bueno, Premium, Bueno, Muy bueno, Muy bueno, Muy bueno, Regular, Mu…
+    ## $ color       <ord> E, E, E, I, J, J, I, H, E, H, J, J, F, J, E, E, I, J, J, J, I, E, H, J, J, G, I, J,…
+    ## $ claridad    <ord> SI2, SI1, VS1, VS2, SI2, VVS2, VVS1, SI1, VS2, VS1, SI1, VS1, SI1, SI2, SI2, I1, SI…
+    ## $ profundidad <dbl> 61.5, 59.8, 56.9, 62.4, 63.3, 62.8, 62.3, 61.9, 65.1, 59.4, 64.0, 62.8, 60.4, 62.2,…
+    ## $ tabla       <dbl> 55, 61, 65, 58, 58, 57, 57, 55, 61, 61, 55, 56, 61, 54, 62, 58, 54, 54, 56, 59, 56,…
+    ## $ x           <dbl> 3.95, 3.89, 4.05, 4.20, 4.34, 3.94, 3.95, 4.07, 3.87, 4.00, 4.25, 3.93, 3.88, 4.35,…
+    ## $ y           <dbl> 3.98, 3.84, 4.07, 4.23, 4.35, 3.96, 3.98, 4.11, 3.78, 4.05, 4.28, 3.90, 3.84, 4.37,…
+    ## $ z           <dbl> 2.43, 2.31, 2.31, 2.63, 2.75, 2.48, 2.47, 2.53, 2.49, 2.39, 2.73, 2.46, 2.33, 2.71,…
 
 Los datos traducidos quedarán cargados durante toda la sesión de R:
 
@@ -147,20 +114,3 @@ diamantes %>%
 ```
 
 <img src="man/figures/diamantes.png">
-
-## Actualización del paquete
-
-La actualización del paquete tiene múltiples pasos. Si se hacen cambios
-a las traducciones, se debe ejecutar el siguiente código para que todas
-las referencias estén al día.
-
-``` r
-# Crea los scripts de traducción
-datos:::data_script()
-# Crea los archivos de ayuda
-datos:::folder_rd()
-# Actualiza el sitio web
-pkgdown::build_site()
-# Cambia la referencia a tipo html
-datos:::fix_reference()
-```

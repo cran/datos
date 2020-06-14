@@ -6,14 +6,16 @@
 \alias{datos-package}
 \title{datos: Traduce al Español Varios Conjuntos de Datos de Práctica}
 \description{
-\if{html}{\figure{logo.png}{options: align='right'}}
+\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-Provee una versión traducida de los siguientes conjuntos de datos: 
-  'airlines', 'airports', 'AwardsManagers', 'babynames', 'Batting', 'diamonds', 'faithful', 'fueleconomy', 
-  'Fielding', 'flights', 'gapminder', 'gss_cat', 'iris', 'Managers', 'mpg', 'mtcars', 'atmos', 'People, 
-  'Pitching', 'planes', 'presidential', 'table1', 'table2', 'table3', 'table4a', 'table4b', 'table5', 
-  'vehicles', 'weather', 'who'. 
-  English: It provides a Spanish translated version of the datasets listed above.
+Provee una versión traducida de los siguientes
+    conjuntos de datos: 'airlines', 'airports', 'AwardsManagers',
+    'babynames', 'Batting', 'diamonds', 'faithful', 'fueleconomy',
+    'Fielding', 'flights', 'gapminder', 'gss_cat', 'iris', 'Managers',
+    'mpg', 'mtcars', 'atmos', 'People, 'Pitching', 'planes',
+    'presidential', 'table1', 'table2', 'table3', 'table4a', 'table4b',
+    'table5', 'vehicles', 'weather', 'who'.  English: It provides a
+    Spanish translated version of the datasets listed above.
 }
 \seealso{
 Useful links:
@@ -24,11 +26,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Edgar Ruiz \email{edgararuiz@gmail.com}
+\strong{Maintainer}: Riva Quiroga \email{riva.quiroga@uc.cl} (\href{https://orcid.org/0000-0002-1147-4135}{ORCID})
 
 Authors:
 \itemize{
-  \item Riva Quiroga \email{riva.quiroga@uc.cl}
+  \item Edgar Ruiz \email{edgararuiz@gmail.com}
   \item Mauricio Vargas \email{mvargas@dcc.uchile.cl}
   \item Mauro Lepore \email{maurolepore@gmail.com}
 }
