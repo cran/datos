@@ -1,6 +1,6 @@
 Package: datos
 Title: Traduce al Español Varios Conjuntos de Datos de Práctica
-Version: 0.3.0
+Version: 0.4.0
 Authors@R: 
     c(person(given = "Riva",
              family = "Quiroga",
@@ -18,7 +18,8 @@ Authors@R:
       person(given = "Mauro",
              family = "Lepore",
              role = "aut",
-             email = "maurolepore@gmail.com"),
+             email = "maurolepore@gmail.com",
+             comment = c(ORCID = "0000-0002-1986-7988")),
       person(given = "Rayna",
              family = "Harris",
              role = "ctb",
@@ -31,7 +32,7 @@ Description: Provee una versión traducida de los siguientes
     conjuntos de datos: 'airlines', 'airports', 'AwardsManagers',
     'babynames', 'Batting', 'diamonds', 'faithful', 'fueleconomy',
     'Fielding', 'flights', 'gapminder', 'gss_cat', 'iris', 'Managers',
-    'mpg', 'mtcars', 'atmos', 'People, 'Pitching', 'planes',
+    'mpg', 'mtcars', 'atmos', 'palmerpenguins', 'People, 'Pitching', 'planes',
     'presidential', 'table1', 'table2', 'table3', 'table4a', 'table4b',
     'table5', 'vehicles', 'weather', 'who'.  English: It provides a
     Spanish translated version of the datasets listed above.
@@ -40,21 +41,22 @@ URL: https://github.com/cienciadedatos/datos
 BugReports: https://github.com/cienciadedatos/datos/issues
 Depends: R (>= 3.5.0)
 Imports: babynames, dplyr, forcats, fueleconomy, gapminder, ggplot2,
-        Lahman, nasaweather, nycflights13, rlang, tibble, tidyr, yaml
+        Lahman, nasaweather, nycflights13, palmerpenguins, rlang,
+        tibble, tidyr, yaml
 Suggests: covr, testthat (>= 2.1.0)
 ByteCompile: true
 Encoding: UTF-8
 Language: es
 LazyData: true
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.2
 NeedsCompilation: no
-Packaged: 2020-06-13 22:24:09 UTC; ciruelo
+Packaged: 2022-02-19 23:40:18 UTC; ciruelo
 Author: Riva Quiroga [aut, cre] (<https://orcid.org/0000-0002-1147-4135>),
   Edgar Ruiz [aut],
   Mauricio Vargas [aut],
-  Mauro Lepore [aut],
+  Mauro Lepore [aut] (<https://orcid.org/0000-0002-1986-7988>),
   Rayna Harris [ctb],
   Daniela Vasquez [ctb]
 Maintainer: Riva Quiroga <riva.quiroga@uc.cl>
 Repository: CRAN
-Date/Publication: 2020-06-15 00:10:02 UTC
+Date/Publication: 2022-02-20 00:00:02 UTC
