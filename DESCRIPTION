@@ -1,6 +1,6 @@
 Package: datos
 Title: Traduce al Español Varios Conjuntos de Datos de Práctica
-Version: 0.5.0
+Version: 0.5.1
 Authors@R: 
     c(person(given = "Riva",
              family = "Quiroga",
@@ -54,7 +54,7 @@ Language: es
 LazyData: true
 RoxygenNote: 7.2.1
 NeedsCompilation: no
-Packaged: 2022-08-29 14:16:45 UTC; ciruelo
+Packaged: 2023-07-17 01:14:32 UTC; ciruelo
 Author: Riva Quiroga [aut, cre] (<https://orcid.org/0000-0002-1147-4135>),
   Edgar Ruiz [aut],
   Mauricio Vargas [aut],
@@ -64,4 +64,4 @@ Author: Riva Quiroga [aut, cre] (<https://orcid.org/0000-0002-1147-4135>),
   Joshua Kunst [ctb]
 Maintainer: Riva Quiroga <riva.quiroga@uc.cl>
 Repository: CRAN
-Date/Publication: 2022-08-29 14:40:05 UTC
+Date/Publication: 2023-07-17 02:20:02 UTC
